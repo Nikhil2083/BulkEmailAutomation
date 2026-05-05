@@ -14,3 +14,5 @@ bin/
 src/main/resources/emails.xlsx
 src/main/resources/config.properties
 src/main/resources/Nikhil_Gurav_AutomationTesting_4Yrs.pdf
+
+*.xlsx
