@@ -1,4 +1,15 @@
+# Build folders
 target/
 bin/
+
+# Compiled files
 *.class
-config.properties
+
+# IDE files (important for Eclipse)
+.classpath
+.project
+.settings/
+
+# Sensitive files
+src/main/resources/emails.xlsx
+src/main/resources/config.properties
