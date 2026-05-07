@@ -43,17 +43,21 @@ public class BulkEmailMain {
             int failCount = 0;
             int skipCount = 0;
             
+            
             List<String> failedEmails = new ArrayList<>();
             
             int emailDelay = Integer.parseInt(ConfigReader.get("email.delay"));
             
             try {
             	
+            	int mailCount = 1;
 
                 for (String email : emails) {
-                    String result = EmailSender.sendEmail(email);
+                	System.out.println("\n📧 Sending Mail #" + mailCount + " to: " + email);
 
-                    if ("SUCCESS".equals(result)) {
+                	String result = EmailSender.sendEmail(email);
+
+                	if ("SUCCESS".equals(result)) {
                         successCount++;
                     } else if ("FAILED".equals(result)) {
                         failCount++;
@@ -62,7 +66,7 @@ public class BulkEmailMain {
                         skipCount++;
                     }
 
-                    
+                	mailCount++;
                     Thread.sleep(emailDelay);
                 }
 
